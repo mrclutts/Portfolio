@@ -240,7 +240,7 @@ color: #ffffff;
 color: #e75854 !important;
 }
 .navbar-brand {
-    color: #446D7C !important;
+    color: #34495E !important;
 }
 
 .navbar-brand {
@@ -267,7 +267,7 @@ color: #e75854 !important;
     color: #f8f8f8;
     background-image: url('../../img/132.JPG');
  
-    height: 850px;
+    height: 950px;
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -1313,6 +1313,17 @@ p.copyright {
     color: #ffffff; 
 
 }
+#music {
+    padding-top: 80px;
+    background-image: url('../../img/vinyl.jpg');
+    background-size: cover;
+}
+#music h2 {
+    color: #e75854;
+}
+.col-xs-12 {
+    padding-bottom: 30px;
+}
 .imgmusic {
     padding: 0;
     margin: 0;
@@ -1327,6 +1338,13 @@ p.copyright {
     position: relative;
     margin: 0 auto;
 }
+.artist {
+     height: 280px;
+     width: 280px;
+     display: block;
+     position: relative;
+     margin: 0 auto;
+ }
 .info {
    text-align: center;
    background: rgba(0,0,0,0.75);
@@ -1354,14 +1372,24 @@ p.copyright {
 a:hover .info {
    opacity: 1;
   }
+#portfolio {
+    padding-top: 70px;
+    background-image: url('../../img/splatter.png');
+    background-position: center;
+    background-size: cover;
+}
 #portfolio .col-xs-12 {
      padding-bottom: 40px;
  }
 #portfolio .portfolioHolder {
     min-height: 700px;
-   
+  
 }
 
+.portfolio-item:hover {
+    box-shadow: 0 0 10px black;
+    background-color: #ffffff;
+}
 
 #filterOptions {
     list-style-type: none;
@@ -1377,6 +1405,12 @@ a:hover .info {
     margin: 0 auto;
     
 
+}
+.modal-header {
+    text-align: center;
+}
+.close {
+    color: #000000;
 }
 .modal-content {
     background-color: #ECECEA;
@@ -1399,7 +1433,13 @@ a:hover .info {
     color: #ff6a00;
 }
 .jsdisplay {
-    font-size: 16px;
+    font-size: 18px;
+}
+.userinputdisplay {
+    color: #e75854;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
 }
 .fizzbuzzdisplay {
     color: #1abc9c;
@@ -1429,4 +1469,31 @@ a:hover .info {
     border: 1px solid #446D7C;
 	color: #446D7C !important;
 	background: rgba(204, 204, 204, 0);
+}
+.funcbtn1:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+#eightball {
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    background-color: #000000;
+    border-radius: 100%;
+    box-shadow: 0 0 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#eightbtn {
+    margin: 0 auto;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 100%;
+    margin-top: 60px;
+    font-size: 26px;
+    outline:none;
+    box-shadow: 0 0 30px #000000;
+    
 }

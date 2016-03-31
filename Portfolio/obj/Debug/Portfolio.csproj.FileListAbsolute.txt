@@ -80,3 +80,8 @@ c:\users\mrcpa\onedrive\documents\visual studio 2015\Projects\Portfolio\Portfoli
 c:\users\mrcpa\onedrive\documents\visual studio 2015\Projects\Portfolio\Portfolio\obj\Debug\Portfolio.csprojResolveAssemblyReference.cache
 c:\users\mrcpa\onedrive\documents\visual studio 2015\Projects\Portfolio\Portfolio\obj\Debug\Portfolio.dll
 c:\users\mrcpa\onedrive\documents\visual studio 2015\Projects\Portfolio\Portfolio\obj\Debug\Portfolio.pdb
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\SendGrid.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\SendGrid.SmtpApi.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\SendGridMail.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\System.Net.Http.Formatting.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\System.Net.Http.Formatting.xml

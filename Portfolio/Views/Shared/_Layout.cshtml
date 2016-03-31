@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title Matt Clutts</title>
     @*@Styles.Render("~/Content/css")*@
-        @Scripts.Render("~/bundles/modernizr")
+       
     <!--BootStrap CSS-->
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <!--Fonts-->
@@ -28,7 +28,8 @@
     <!-- SyntaxHighlighter CSS-->
     <link href="~/Content/SyntaxHighlighter/shCoreEclipse.css" rel="stylesheet" />
     <link href="~/Content/SyntaxHighlighter/shThemeEclipse.css" rel="stylesheet" />
-
+    @Scripts.Render("~/bundles/modernizr")
+    
 </head>
 <body>
     <!-- NavBar-->
@@ -51,7 +52,7 @@
                     <li class="menuItem">@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
                     <li class="menuItem">@Html.ActionLink("Music", "Music", "Home") </li>
                     <li class="menuItem">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    
+
                 </ul>
             </div>
 
@@ -90,35 +91,32 @@
     @RenderSection("scripts", required: false)*@
     <!-- JavaScript -->
     <script src="~/js/jquery-1.10.2.js"></script>
-    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/bootstrap.js"></script>  
     <script src="~/js/owl.carousel.js"></script>   
-    <script src="~/js/portfolio.js"></script>
+
     <!-- StikyMenu -->
     <script src="~/js/stickUp.min.js"></script>
     <script src="~/js/script.js"></script>
     <script type="text/javascript">
 	  jQuery(function($) {
-		$(document).ready( function() {
+	      $(document).ready(function () {
 		  $('.navbar-default').stickUp();
 
 		});
 	  });
-
-    </script>
+    </script> 
     <!-- Smoothscroll -->
     <script type="text/javascript" src="~/js/jquery.corner.js"></script>
     <script src="~/js/wow.min.js"></script>
     <script>
-	 new WOW().init();
+        $(function () {
+            new WOW().init();
+        });	 
     </script>
     <script src="~/js/classie.js"></script>
     <script src="~/js/uiMorphingButton_inflow.js"></script>
     <!-- Magnific Popup core JS file -->
     <script src="~/js/jquery.magnific-popup.js"></script>
-
-  
-
-
     <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
     <script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
     <script type="text/javascript">

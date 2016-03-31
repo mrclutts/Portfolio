@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    
     $('.portfolioHolder').children('div:not(.jQuery)').hide();
     $('#filterOptions li a').click(function () {
         var activeClass = $(this).attr('class');

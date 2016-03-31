@@ -1,0 +1,75 @@
+.calc {
+	background-color: #666699;
+	box-shadow: 0 5px 5px #404040;
+	width: 280px;
+	margin: 50px auto;
+	padding: 10px 0 10px 0;
+	text-align: center;
+	border-radius: 10px;
+}
+.calcRow {
+	text-align: center;
+	padding: 5px 10px;
+
+}
+.calcBtn {
+	margin: 2px;
+	padding: 5px 10px 5px 10px;
+	border-radius: 5px;
+	background-color: #333333;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 20px;
+	border:2px solid #333333;
+    outline: none;
+}
+.calcBtn:hover{
+	box-shadow: 0 0 5px #000000;
+}
+.operator {
+	background-color: #ff9900;
+	border:2px solid #ff9900;
+	border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+	margin: 2px;
+	font-weight: bold;
+	font-size: 20px;
+    outline:none;
+	}
+	.operator:hover {
+		box-shadow: 0 0 5px #000000;
+	}
+#clear {
+	border:2px solid #ff1a75;
+	border-radius: 5px;
+	padding: 5px 20px 5px 20px;
+	margin: 2px;
+	background-color: #ff1a75;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 20px;
+    outline: none;
+}
+#clear:hover {
+	box-shadow: 0 0 5px #000000;
+}
+#equal {
+	border:2px solid #3fc080;
+	border-radius: 5px;
+	padding: 5px 20px 5px 20px;
+	margin: 2px;
+	background-color: #3fc080;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 20px;
+    outline: none;
+}
+#equal:hover {
+	box-shadow: 0 0 5px #000000;
+}
+#display {
+	border-radius: 5px;
+	font-size: 16px;
+	width: 180px;
+	height:35px;
+}

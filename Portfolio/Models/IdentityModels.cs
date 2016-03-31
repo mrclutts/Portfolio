@@ -29,5 +29,7 @@ namespace Portfolio.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Contact> Contact { get; set; }
     }
 }
