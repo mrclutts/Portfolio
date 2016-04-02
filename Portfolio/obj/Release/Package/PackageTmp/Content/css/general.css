@@ -271,7 +271,7 @@ color: #e75854 !important;
     padding-bottom: 50px;
     color: #f8f8f8;
     background-image: url('../../img/132.JPG');
- 
+    background-attachment: fixed;
     height: 1080px;
     background-size: cover;
     background-position: center;
@@ -1109,9 +1109,7 @@ color: #e75854 !important;
 		#gallery1{display:none}
 		
 		.button_down {display:none}
-		#music{background-image:none;
-               
-		}
+		
 		
 	}
 
@@ -1221,8 +1219,8 @@ color: #e75854 !important;
 }
 
 footer {
-	background-color: #f8f8f8;
-	padding: 50px 0;
+	background-color: #8D8D8D;
+	padding: 25px 0;
 }
 
 p.copyright {
@@ -1321,17 +1319,21 @@ p.copyright {
 
 }
 #music {
-    padding-top: 80px;
     background-image: url('../../img/vinyl.jpg');
     background-size: cover;
-    min-height: 1000px;
+    min-height: 1080px;
+    background-attachment: fixed;
+}
+.overlayMusic {
+    padding-top: 80px;
+    background: rgba(80, 80, 80, 0.35);
+    min-height: 1080px;
+    position: relative;
 }
 #music h2 {
     color: #e75854;
 }
-.col-xs-12 {
-    padding-bottom: 30px;
-}
+
 .imgmusic {
     padding: 0;
     margin: 0;
@@ -1381,20 +1383,26 @@ a:hover .info {
    opacity: 1;
   }
 #portfolio {
-    padding-top: 70px;
+    
     background-image: url('../../img/splatter.png');
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+
+}
+.overlayPort {
+    padding-top: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    min-height: 700px;
+    position: relative;
 }
 #portfolio .col-xs-12 {
-     padding-bottom: 40px;
+     padding-top: 30px;
+     padding-bottom: 15px;
  }
 #portfolio .portfolioHolder {
-    min-height: 1000px;
+    min-height: 700px;
   
-}
-.portfolio-item {
-    padding: 15px 0;
 }
 
 .portfolio-item:hover {
@@ -1509,10 +1517,11 @@ a:hover .info {
     
 }
 #contact {
-    min-height: 900px;
+    min-height: 1080px;
     background-image: url('../../img/IMG_3962.JPG');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     color: #ffffff;
     
 
@@ -1526,7 +1535,7 @@ a:hover .info {
 .overlay {
     padding-top: 100px;
     background: rgba(80, 80, 80, 0.85);
-    min-height: 900px;
+    min-height: 1080px;
     position: relative;
 }
 .contactbtn {
@@ -1539,4 +1548,7 @@ a:hover .info {
 .contactbtn:hover {
     color: #e75854 !important;
     background-color: #ffffff;
+}
+.nopad {
+    padding: 0;
 }

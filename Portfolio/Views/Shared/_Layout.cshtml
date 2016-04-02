@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
+
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title Matt Clutts</title>
@@ -29,9 +29,7 @@
     <link href="~/Content/SyntaxHighlighter/shCoreEclipse.css" rel="stylesheet" />
     <link href="~/Content/SyntaxHighlighter/shThemeEclipse.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
-    
-</head>
-<body>
+
     <!-- NavBar-->
     <nav class="navbar-default" role="navigation">
         <div class="container">
@@ -89,7 +87,7 @@
             <div class="row">
                 <div class="container">
                     
-                        <div class="col-md-5 col-xs-12">
+                        <div class="col-md-5 col-xs-12 nopad">
                              <div class="footer-banner">
                             <h3 class="footer-title">Built with:</h3>
                             <ul>
@@ -171,6 +169,6 @@
         SyntaxHighlighter.all();
     </script>
     
+
  @RenderSection("scripts", required: false)
-</body>
-</html>
+

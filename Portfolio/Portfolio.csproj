@@ -308,6 +308,7 @@
     <Content Include="img\.net.PNG" />
     <Content Include="img\csharp.png" />
     <Content Include="img\IMG_3962.JPG" />
+    <Content Include="img\jsIcon.png" />
     <Content Include="img\prog-csharp.png" />
     <Content Include="img\tree_favicon.gif" />
     <Content Include="img\whiteIcon\css3-02.png" />
