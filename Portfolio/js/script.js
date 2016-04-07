@@ -32,8 +32,8 @@ $(document).ready(function() {
 		});
 		wow.init();
 		
-		//MagnificPopup
-		$('.image-link').magnificPopup({type:'image'});
+		////MagnificPopup
+		//$('.image-link').magnificPopup({type:'image'});
 
 
 		// OwlCarousel N1
@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 		// OwlCarousel N2
 		$("#owl-demo-1").owlCarousel({
-              autoPlay: 3000,
+              
 			  navigation : false, // Show next and prev buttons
 			  slideSpeed : 300,
 			  paginationSpeed : 400,
@@ -67,12 +67,12 @@ $(document).ready(function() {
 			}
 		});
 		
-		//Subscribe
-		new UIMorphingButton( document.querySelector( '.morph-button' ) );
-		// for demo purposes only
-		[].slice.call( document.querySelectorAll( 'form button' ) ).forEach( function( bttn ) { 
-			bttn.addEventListener( 'click', function( ev ) { ev.preventDefault(); } );
-		} );
+		////Subscribe
+		//new UIMorphingButton( document.querySelector( '.morph-button' ) );
+		//// for demo purposes only
+		//[].slice.call( document.querySelectorAll( 'form button' ) ).forEach( function( bttn ) { 
+		//	bttn.addEventListener( 'click', function( ev ) { ev.preventDefault(); } );
+		//} );
 
 });
 

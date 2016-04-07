@@ -12,6 +12,11 @@ namespace Portfolio
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: "NewSlug",
+                url: "Blog/{Slug}",
+                defaults: new { controller = "Blogs", action = "Details", slug = UrlParameter.Optional }
+                );
 
             routes.MapRoute(
                 name: "Default",

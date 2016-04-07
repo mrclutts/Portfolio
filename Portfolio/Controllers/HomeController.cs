@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Portfolio.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             return View();
@@ -17,6 +19,10 @@ namespace Portfolio.Controllers
         {
             
             return View();
+        }
+        public ActionResult Blog()
+        {
+            return View(db.Blog.ToList());
         }
 
         public ActionResult Portfolio()

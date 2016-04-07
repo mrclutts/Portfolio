@@ -5,7 +5,7 @@
 <!-- Contact -->
 <section id="contact" class="text-center">
     <div class="overlay">
-        <div class="col-md-12">
+        <div class="col-md-12 wow fadeInDownBig">
 
             <h2>Contact Me!</h2>
 
@@ -13,7 +13,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-xs-12">
+                <div class="col-md-6 col-xs-12 wow fadeInLeftBig">
                     @using (Html.BeginForm("Create", "Contacts", FormMethod.Post))
             {
                         @Html.AntiForgeryToken()
@@ -58,7 +58,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <br />
-                                    <input type="submit" value="Send" class="btn btn-large contactbtn wow swing wow fadeIn tada" />
+                                    <input type="submit" value="Send" class="btn btn-large contactbtn wow tada" data-wow-delay=".8s" />
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                 </div>
             
                 
-                    <div class="col-md-6 address">
+                    <div class="col-md-6 address wow fadeInRightBig">
 
                         <p class="lead">
                             If you would like to work together, feel free to send me a message with your project details.  Or send me a message just to say hello!
@@ -74,9 +74,10 @@
                         <h3>Based In</h3>
                         Raleigh, NC<br>
                         <li class="social">
-                            <a href="#"><i class="fa fa-github-square fa-2x"> </i></a>
-                            <a href="#"><i class="fa  fa-linkedin-square fa-2x"> </i> </a>
-                            <a href="#"><i class="fa fa-twitter-square fa-2x"> </i></a>
+                            <a href="https://github.com/mrclutts" target="_blank"><i class="fa fa-github-square fa-2x"> </i></a>
+                            <a href="https://www.linkedin.com/in/matt-clutts-042b8968
+" target="_blank"><i class="fa  fa-linkedin-square fa-2x"> </i> </a>
+                            <a href="https://twitter.com/mrcpack17" target="_blank"><i class="fa fa-twitter-square fa-2x"> </i></a>
                         </li>
                     </div>
                 </div>

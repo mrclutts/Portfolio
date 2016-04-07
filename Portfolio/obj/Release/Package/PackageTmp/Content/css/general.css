@@ -244,12 +244,13 @@ color: #e75854 !important;
 }
 .navbar-brand {
     color: #34495E !important;
+
 }
 
 .navbar-brand {
 	font-family: arvo;
 	letter-spacing: 3px;
-	font-weight: 400 !important;
+	font-weight: 600 !important;
 }
 .menuItem {
     
@@ -286,6 +287,7 @@ color: #e75854 !important;
 
 .list-inline {
 	margin-top: 30px;
+    padding: 0;
 }
 .intro-message > h1 {
 	margin: 0;
@@ -1280,6 +1282,16 @@ p.copyright {
 	}
 
 }
+#about p {
+    font-size: 19px;
+}
+#petey {
+    color: #e75854;
+}
+#skills a {
+    color: #e75854;
+}
+
 #filterOptions {
     list-style-type: none;
     overflow: hidden;
@@ -1323,6 +1335,9 @@ p.copyright {
     background-size: cover;
     min-height: 1080px;
     background-attachment: fixed;
+}
+#music .col-xs-12 {
+    padding: 25px 0;
 }
 .overlayMusic {
     padding-top: 80px;
@@ -1390,6 +1405,7 @@ a:hover .info {
     background-attachment: fixed;
 
 }
+
 .overlayPort {
     padding-top: 100px;
     background: rgba(255, 255, 255, 0.2);
@@ -1444,9 +1460,15 @@ a:hover .info {
     
     display:inline-block;
  }
-.modal-body {
-    font-size: 18px;
+.modal-body p{
+    font-size: 18px !important;
     
+}
+.modal-body a {
+    color: #e75854;
+}
+.modal-body a:hover {
+   color: #e75854;
 }
 .error {
     color: #ff6a00;
@@ -1516,6 +1538,9 @@ a:hover .info {
     box-shadow: 0 0 30px #000000;
     
 }
+.eight {
+    color: #e75854;
+}
 #contact {
     min-height: 1080px;
     background-image: url('../../img/IMG_3962.JPG');
@@ -1534,7 +1559,7 @@ a:hover .info {
 }
 .overlay {
     padding-top: 100px;
-    background: rgba(80, 80, 80, 0.85);
+    background: rgba(80, 80, 80, 0.7);
     min-height: 1080px;
     position: relative;
 }
