@@ -51,7 +51,7 @@
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")">@Html.ActionLink("About", "About", "Home")</li>
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Resume" ? "active" : "")"><a target="_blank" href="~/img/Matthew Clutts Resume.pdf">Resume</a></li>
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Portfolio" ? "active" : "")">@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>                   
-                    <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Blog" ? "active" : "")">@Html.ActionLink("Blog", "Index", "Blogs") </li>
+                    <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "BlogIndex" ? "active" : "")">@Html.ActionLink("Blog", "BlogIndex", "Blogs") </li>
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Music" ? "active" : "")">@Html.ActionLink("Music", "Music", "Home") </li>
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")">@Html.ActionLink("Contact", "Contact", "Home")</li>
 
@@ -72,31 +72,42 @@
                 <div class="container">
                     
                         <div class="col-md-5 col-xs-12 nopad">
-                             <div class="footer-banner">
-                            <h3 class="footer-title">Built with:</h3>
-                            <ul>
-                                <li>
-                                    .Net Framework
-                                    <img src="~/img/whiteIcon/prog-csharp.png" />
-                                </li>
-                                <li>
-                                    HTML5
-                                    <img src="~/img/whiteIcon/html5-02.png" />
-                                </li>
-                                <li>
-                                    CSS3
-                                    <img src="~/img/whiteIcon/css3-02.png" />
-                                </li>
-                                <li>
-                                    JavaScript
-                                    <img src="~/img/whiteIcon/prog-js01.png" />
-                                </li>
-                                <li>
-                                    JQuery
-                                    <img src="~/img/whiteIcon/prog-jquery.png" />
-                                </li>
-                            </ul>
-                        </div>
+                            <div class="footer-banner">
+                                <h3 class="footer-title">Built with:</h3>
+                                <div class="col-xs-6 footerpad">
+                                    <ul>
+                                        <li>
+                                            .Net Framework
+                                            <img src="~/img/whiteIcon/prog-csharp.png" />
+                                        </li>
+                                        <li>
+                                            JavaScript
+                                            <img src="~/img/whiteIcon/prog-js01.png" />
+                                        </li>
+                                        <li>
+                                            JQuery
+                                            <img src="~/img/whiteIcon/prog-jquery.png" />
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                                <div class="col-xs-6 footerpad">
+                                    <ul>
+                                        <li>
+                                            HTML5
+                                            <img src="~/img/whiteIcon/html5-02.png" />
+                                        </li>
+                                        <li>
+                                            CSS3
+                                            <img src="~/img/whiteIcon/css3-02.png" />
+                                        </li>
+                                        <li>
+                                            Bootstrap
+                                            <img src="~/img/whiteIcon/rus-vk-01.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
                     <div class="col-md-7 col-xs-12">
                         <h3 class="footer-title">More of my work:</h3>

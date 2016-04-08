@@ -58,7 +58,7 @@
         <!-- nam-matis -->
         <div class="nam-matis">
             <div class="nam-matis-top">
-                @foreach (var blog in Model.OrderByDescending(p => p.Created).Take(4))
+                @foreach (var blog in Model.OrderByDescending(p => p.Created))
                 { 
                 <div class="col-md-6 nam-matis-1">
                     <a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})"><img src="~/img/blog/Umstead.JPG" class="img-responsive" /></a>

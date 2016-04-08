@@ -33,7 +33,7 @@ $(document).ready(function() {
 		wow.init();
 		
 		////MagnificPopup
-		//$('.image-link').magnificPopup({type:'image'});
+		$('.image-link').magnificPopup({type:'image'})
 
 
 		// OwlCarousel N1

@@ -4457,6 +4457,7 @@ footer {
   color: #bac1c8;
   font-size: 15px;
   padding: 0;
+  max-height: 200px;
 }
 footer a {
   color: #9aa4af;
@@ -4486,8 +4487,8 @@ footer p {
   background-color: #34495e;
   color: #fff;
   margin-left: 42px;
-  min-height: 236px;
-  padding: 0 30px 30px;
+  min-height: 200px;
+  padding: 0 30px 5px 30px;
 }
 .footer-banner .footer-title {
   color: #ffffff;

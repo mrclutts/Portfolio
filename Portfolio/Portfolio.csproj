@@ -324,6 +324,7 @@
     <Content Include="img\peteymatt.PNG" />
     <Content Include="img\prog-csharp.png" />
     <Content Include="img\blog\tick1.png" />
+    <Content Include="img\whiteIcon\rus-vk-01.png" />
     <Content Include="js\Blog JS\jquery.flexisel.js" />
     <Content Include="js\Blog JS\responsiveslides.min.js" />
     <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
@@ -1582,7 +1583,9 @@
     <Content Include="Views\Blogs\Details.cshtml" />
     <Content Include="Views\Blogs\Edit.cshtml" />
     <Content Include="Views\Blogs\Admin.cshtml" />
-    <Content Include="Views\Blogs\Index.cshtml" />
+    <Content Include="Views\Blogs\BlogIndex.cshtml" />
+    <Content Include="Views\Account\ResendEmailConfirmation.cshtml" />
+    <Content Include="Views\Account\ConfirmationSent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

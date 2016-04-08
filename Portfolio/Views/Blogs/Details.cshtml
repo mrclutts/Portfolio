@@ -5,7 +5,98 @@
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
 
-<h2>Details</h2>
+
+
+
+<div class="container">
+    <div class="blog">
+        <div class="blog-content">
+            <div class="blog-content-left">
+                <div class="blog-articals">
+                    <div class="blog-artical">
+                        <div class="blog-artical-info">
+                            <div class="blog-artical-info-img">
+                                <a href="~/img/blog/Boats.JPG" class="image-link">
+                                    <div class="item">
+                                        <img src="~/img/blog/Boats.JPG" class="img-responsive" />
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="blog-artical-info-head">
+                                <h2>@Html.DisplayFor(model => model.Title)</h2>
+                                <h6> <i class="fa fa-clock-o"></i> Posted on, @Html.DisplayFor(model => model.Created.LocalDateTime) by <a href="#"> Matt Clutts</a></h6>
+
+                            </div>
+                            <div class="blog-artical-info-text">
+                                <p>@Html.Raw(Model.Body)<a href="single.html">[...]</a></p>
+                            </div>
+                            <div class="artical-links">
+                                <ul>
+                                    <li><small> </small><span>@Html.DisplayFor(model => model.Created.LocalDateTime)</span></li>
+                                    <li><a href="#"><small class="admin"> </small><span>Matt Clutts</span></a></li>
+                                    <li><a href="#"><small class="no"> </small><span>Comments</span></a></li>
+                                    <li><a href="#"><small class="link"> </small><span>@Html.DisplayFor(model => model.Tag)</span></a></li>
+                                    <li><a href="@Url.Action("BlogIndex", "Blogs")"><small class="posts"> </small><span>Back to Blog</span></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="blog-content-right">
+                <div class="b-search">
+                    <form>
+                        <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="">
+                    </form>
+                </div>
+                <!--start-twitter-weight-->
+                <div class="twitter-weights">
+                    <h3>Tweet Widget</h3>
+                    <div class="twitter-weight-grid">
+                        <h4><span> </span>John Doe</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur elit,labore et dolore magna aliqua. <a href="#">http://t.co/h12k</a></p>
+                        <i><a href="#">2 days ago</a></i>
+                    </div>
+
+                    <div class="twitter-weight-grid">
+                        <h4><span> </span>John Doe</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur elit,labore et dolore magna aliqua. <a href="#">http://t.co/h12k</a></p>
+                        <i><a href="#">2 days ago</a></i>
+                    </div>
+                    <a class="twittbtn" href="#">See all Tweets</a>
+                </div>
+                <!--//End-twitter-weight-->
+                <!-- start-tag-weight-->
+                <div class="b-tag-weight">
+                    <h3>Tags Weight</h3>
+                    <ul>
+                        <li><a href="#">Lorem</a></li>
+                        <li><a href="#">consectetur</a></li>
+                        <li><a href="#">dolore</a></li>
+                        <li><a href="#">aliqua</a></li>
+                        <li><a href="#">sit amet</a></li>
+                        <li><a href="#">ipsum</a></li>
+                        <li><a href="#">Lorem</a></li>
+                        <li><a href="#">consectetur</a></li>
+                        <li><a href="#">dolore</a></li>
+                        <li><a href="#">aliqua</a></li>
+                        <li><a href="#">sit amet</a></li>
+                        <li><a href="#">ipsum</a></li>
+                    </ul>
+                </div>
+                <!---- //End-tag-weight---->
+            </div>
+            <div class="clearfix"> </div>
+        
+    </div>
+</div>
+
+
+@*<h2>Details</h2>
 
 <div>
     <h4>Blog</h4>
@@ -66,10 +157,17 @@
         <dd>
             @Html.DisplayFor(model => model.Published)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    @Html.ActionLink("Back to List", "BlogIndex")
+</p>*@

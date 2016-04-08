@@ -1216,7 +1216,9 @@ footer {
 	background-color: #8D8D8D;
 	padding: 25px 0;
 }
-
+.footerpad {
+    padding-left:0;
+}
 p.copyright {
 	margin: 15px 0 0;
 }
@@ -1425,6 +1427,9 @@ a:hover .info {
 .porticon {
     width: 75px;
     height: 75px;
+}
+.modal {
+    z-index: 10000 !important;
 }
 .modal-lg {
     width: 75%;

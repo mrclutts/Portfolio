@@ -15,7 +15,7 @@ namespace Portfolio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Blogs
-        public ActionResult Index(string tag)
+        public ActionResult BlogIndex(string tag)
         {
             List<Blog> posts= new List<Blog>();
             if (!String.IsNullOrWhiteSpace(tag))
@@ -76,7 +76,7 @@ namespace Portfolio.Controllers
                 blog.Created = System.DateTimeOffset.Now;
                 db.Blog.Add(blog);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
 
             return View(blog);
@@ -117,7 +117,7 @@ namespace Portfolio.Controllers
                 db.Entry(blog).Property("Updated").IsModified = true;
                 db.Entry(blog).Property("Tag").IsModified = true;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
             return View(blog);
         }
@@ -145,7 +145,7 @@ namespace Portfolio.Controllers
             Blog blog = db.Blog.Find(id);
             db.Blog.Remove(blog);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Admin");
         }
 
         protected override void Dispose(bool disposing)
