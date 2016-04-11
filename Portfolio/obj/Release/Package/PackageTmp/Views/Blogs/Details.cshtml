@@ -1,0 +1,169 @@
+﻿@model Portfolio.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="blog">
+        <div class="blog-content">
+            <div class="blog-content-left">
+                <div class="blog-articals">
+                    <div class="blog-artical">
+                        <div class="blog-artical-info">
+                            <div class="blog-artical-info-img">
+                                <a href="~/img/blog/Boats.JPG" class="image-link">
+                                    <div class="item">
+                                        <img src="~/img/blog/Boats.JPG" class="img-responsive" />
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="blog-artical-info-head">
+                                <h2>@Html.DisplayFor(model => model.Title)</h2>
+                                <h6> <i class="fa fa-clock-o"></i> Posted on, @Html.DisplayFor(model => model.Created.LocalDateTime) by <a href="#"> Matt Clutts</a></h6>
+
+                            </div>
+                            <div class="blog-artical-info-text">
+                                <p>@Html.Raw(Model.Body)<a href="single.html">[...]</a></p>
+                            </div>
+                            <div class="artical-links">
+                                <ul>
+                                    <li><small> </small><span>@Html.DisplayFor(model => model.Created.LocalDateTime)</span></li>
+                                    <li><a href="#"><small class="admin"> </small><span>Matt Clutts</span></a></li>
+                                    <li><a href="#"><small class="no"> </small><span>Comments</span></a></li>
+                                    <li><a href="#"><small class="link"> </small><span>@Html.DisplayFor(model => model.Tag)</span></a></li>
+                                    <li><a href="@Url.Action("BlogIndex", "Blogs")"><small class="posts"> </small><span>Back to Blog</span></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="blog-content-right">
+                <div class="b-search">
+                    <form>
+                        <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="">
+                    </form>
+                </div>
+                <!--start-twitter-weight-->
+                <div class="twitter-weights">
+                    <h3>Recent Posts</h3>
+                    <div class="twitter-weight-grid">
+                        <h4><span> </span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur elit,labore et dolore magna aliqua. <a href="#"></a></p>
+                        <i><a href="#"></a></i>
+                    </div>
+
+                    <div class="twitter-weight-grid">
+                        <h4><span> </span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur elit,labore et dolore magna aliqua. <a href="#"></a></p>
+                        <i><a href="#"></a></i>
+                    </div>
+                    <a class="twittbtn" href="http://mrclutts.azurewebsites.net/Blogs/BlogIndex">Back to Blog</a>
+                </div>
+                <!--//End-twitter-weight-->
+                <!-- start-tag-weight-->
+                <div class="b-tag-weight">
+                    <h3>More Topics</h3>
+                    <ul>
+                        <li><a href="#">Test1</a></li>
+                        <li><a href="#">Test2</a></li>
+                        <li><a href="#">Test3</a></li>
+                        <li><a href="#">Test4</a></li>
+                        <li><a href="#">Test5</a></li>
+                        <li><a href="#">Test6</a></li>
+                        <li><a href="#">Test7</a></li>
+                        <li><a href="#">Test8</a></li>
+                    </ul>
+                </div>
+                <!---- //End-tag-weight---->
+            </div>
+            <div class="clearfix"> </div>
+        
+    </div>
+</div>
+
+
+@*<h2>Details</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created.LocalDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Updated)
+        </dt>
+
+        <dd>
+            @Model.Updated.LocalDateTime
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slug)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slug)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Body)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MediaURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Published)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Published)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "BlogIndex")
+</p>*@

@@ -1,11 +1,9 @@
 ﻿@model Portfolio.Models.Contact
-@{
-    ViewBag.Title = "Contact";
-}
+
 <!-- Contact -->
 <section id="contact" class="text-center">
     <div class="overlay">
-        <div class="col-md-12 wow fadeInDownBig">
+        <div class="col-md-12 wow fadeInDownBig" >
 
             <h2>Contact Me!</h2>
 
@@ -14,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-xs-12 wow fadeInLeftBig">
-                    @using (Html.BeginForm("Create", "Contacts", FormMethod.Post))
+                    @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
             {
                         @Html.AntiForgeryToken()
 
@@ -23,7 +21,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-12">
-                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your name!" } })
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "*Please enter your name!" } })
                                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -31,25 +29,25 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.SenderEmail, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-12">
-                                    @Html.EditorFor(model => model.SenderEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter a valid e-mail" } })
+                                    @Html.EditorFor(model => model.SenderEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "*Please enter a valid e-mail" } })
                                     @Html.ValidationMessageFor(model => model.SenderEmail, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
-                            @*<div class="form-group">
-                                    @Html.LabelFor(model => model.SendTime, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.SendTime, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.SendTime, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                    @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter a valid phone number. (Optional)" } })
+                                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                                     </div>
-                                </div>*@
+                                </div>
 
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
 
                                 <div class="col-md-12">
 
-                                    @Html.TextAreaFor(model => model.Message, 10, 80, htmlAttributes: new { @class = "form-control", placeholder = "Please enter your message." })
+                                    @Html.TextAreaFor(model => model.Message, 6, 80, htmlAttributes: new { @class = "form-control", placeholder = "*Please enter your message." })
                                     @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
 
                                 </div>
@@ -58,7 +56,8 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <br />
-                                    <input type="submit" value="Send" class="btn btn-large contactbtn wow tada" data-wow-delay=".8s" />
+                                    <input type="submit" value="Send" class="btn btn-large contactbtn" />
+                                    <div class="success wow fadeIn" data-wow-delay="1.2s">@ViewBag.Message</div>
                                 </div>
                             </div>
                         </div>

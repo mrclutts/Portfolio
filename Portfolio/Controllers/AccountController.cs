@@ -61,6 +61,22 @@ namespace Portfolio.Controllers
             return View();
         }
 
+        //GET: /GetCurrentDisplayName/Account 
+        //For Login_Partial DisplayName 
+        [ChildActionOnly]
+        public string GetCurrentDisplayName()
+        {
+            var user = UserManager.FindByEmail(User.Identity.GetUserName());
+            if (user != null)
+            {
+                return user.DisplayName;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
         //
         // POST: /Account/Login
         [HttpPost]
@@ -76,9 +92,10 @@ namespace Portfolio.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            
             switch (result)
-            {
-                case SignInStatus.Success:
+            {                  
+                case SignInStatus.Success: 
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

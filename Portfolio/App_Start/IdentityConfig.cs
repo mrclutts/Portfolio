@@ -19,23 +19,30 @@ namespace Portfolio
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
             var apikey = ConfigurationManager.AppSettings["SendGridAPIKey"];
             var from = ConfigurationManager.AppSettings["ContactEmail"];
             //Create the email object first, then add the porperties.
             SendGridMessage myMessage = new SendGridMessage();
-            myMessage.AddTo(message.Destination);
+            myMessage.AddTo(from);
             myMessage.From = new MailAddress(from);
             myMessage.Subject = message.Subject;
             myMessage.Html = message.Body;
 
             //Create a web transport, using API Key
-            var transportWeb = new Web(ConfigurationManager.AppSettings["SendGridAPIKey"]);
+            var transportWeb = new Web(apikey);
             //Send the email.
-            transportWeb.DeliverAsync(myMessage);
-
-            return Task.FromResult(0);
+            try
+            {
+                
+                await transportWeb.DeliverAsync(myMessage);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                await Task.FromResult(0);
+            }
         }
     }
 

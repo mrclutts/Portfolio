@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Portfolio.Models
 {
@@ -12,7 +13,9 @@ namespace Portfolio.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        [Required]
         public string DisplayName { get; set; }
+        
 
         public ApplicationUser()
         {

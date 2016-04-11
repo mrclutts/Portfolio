@@ -215,6 +215,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -312,7 +313,14 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\.net.PNG" />
+    <Content Include="img\Blackicons\css3-02.png" />
+    <Content Include="img\Blackicons\dbs-sqlserver.png" />
+    <Content Include="img\Blackicons\html5-02.png" />
+    <Content Include="img\Blackicons\prog-aspnet.png" />
+    <Content Include="img\Blackicons\prog-csharp.png" />
+    <Content Include="img\Blackicons\prog-jqueryblack.png" />
     <Content Include="img\blog\052.JPG" />
+    <Content Include="img\blog\blogvinyl.jpg" />
     <Content Include="img\blog\Boats.JPG" />
     <Content Include="img\blog\boston.JPG" />
     <Content Include="img\blog\gfather.JPG" />
@@ -322,8 +330,11 @@
     <Content Include="img\jsIcon.png" />
     <Content Include="img\MrPeterClutts.png" />
     <Content Include="img\peteymatt.PNG" />
+    <Content Include="img\prog-aspnet.png" />
+    <Content Include="img\prog-csharp black.png" />
     <Content Include="img\prog-csharp.png" />
     <Content Include="img\blog\tick1.png" />
+    <Content Include="img\whiteIcon\prog-aspnet white.png" />
     <Content Include="img\whiteIcon\rus-vk-01.png" />
     <Content Include="js\Blog JS\jquery.flexisel.js" />
     <Content Include="js\Blog JS\responsiveslides.min.js" />
@@ -1586,10 +1597,14 @@
     <Content Include="Views\Blogs\BlogIndex.cshtml" />
     <Content Include="Views\Account\ResendEmailConfirmation.cshtml" />
     <Content Include="Views\Account\ConfirmationSent.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\Icons\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

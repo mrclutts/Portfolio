@@ -2416,3 +2416,32 @@ a.b-home {
 	font-size: 0.8125em;
 }
 }
+.blogtitle h2 {
+    font-size: 60px;
+    padding-top: 25px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+.blogtitle {
+    background-image: url('../../img/blog/blogvinyl.jpg');
+    height: 300px;
+    color: #ffffff;
+    
+}
+.blogoverlay {
+    background:rgba(38, 49, 59, 0.55);
+    height: 300px;
+}
+.bloghead {
+    background:#e75854;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin-top: 50px;
+    text-align:center;
+}
+.bloghead p {
+       font-size: 30px;
+}
+.footerblog {
+    margin-left: 0px !important;
+}

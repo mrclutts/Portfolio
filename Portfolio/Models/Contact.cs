@@ -23,5 +23,8 @@ namespace Portfolio.Models
 
         [Required]
         public string Message { get; set; }
+
+        [Phone]
+        public string Phone { get; set; }
     }
 }

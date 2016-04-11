@@ -1291,6 +1291,7 @@ select[multiple].input-hg {
 .has-error .radio-inline,
 .has-error .checkbox-inline {
   color: #e74c3c;
+
 }
 .has-error .form-control {
   color: #e74c3c;
@@ -1736,7 +1737,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 .checkbox input,
 .radio input {
   outline: none !important;
-  display: none;
+  /*display: none;*/
 }
 .checkbox .icons,
 .radio .icons {
@@ -2286,7 +2287,7 @@ select[multiple].navbar-form .btn {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #e75854;
+  color: #ffffff;
   background-color: #34495E;
 }
 .navbar-default .navbar-nav > .disabled > a,
@@ -4456,6 +4457,7 @@ footer {
   color: #bac1c8;
   font-size: 15px;
   padding: 0;
+  max-height: 200px;
 }
 footer a {
   color: #9aa4af;
@@ -4485,8 +4487,8 @@ footer p {
   background-color: #34495e;
   color: #fff;
   margin-left: 42px;
-  min-height: 236px;
-  padding: 0 30px 30px;
+  min-height: 200px;
+  padding: 0 30px 5px 30px;
 }
 .footer-banner .footer-title {
   color: #ffffff;

@@ -118,7 +118,7 @@ filter: alpha(opacity=95) !important;
 	right:0;
 	bottom:0;
 	background-color:#fff; /* change if the mask should have another color then white */
-	z-index:99; /* makes sure it stays on top */
+	z-index:99999; /* makes sure it stays on top */
 }
 
 #status {
@@ -1473,6 +1473,13 @@ a:hover .info {
 .modal-body a:hover {
    color: #e75854;
 }
+.modallist li{
+    list-style-type:circle;
+}
+.csharpbtn {
+    padding: 10px;
+    color: #ffffff !important;
+}
 .error {
     color: #ff6a00;
 }
@@ -1559,6 +1566,9 @@ a:hover .info {
     padding-left: 50px;
     padding-right: 50px;
     font-weight: bold;
+}
+.success {
+    font-size: 20px;
 }
 .overlay {
     padding-top: 100px;
@@ -1879,6 +1889,9 @@ a:hover .info {
 }
 .lipad {
     padding-right: 5px;
+}
+.lipad li {
+    padding-right: 3px;
 }
 /* BLOG */
 .blogpad {

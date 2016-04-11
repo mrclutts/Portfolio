@@ -10,8 +10,10 @@ using Portfolio.Models;
 
 namespace Portfolio.Controllers
 {
+    
     public class BlogsController : Controller
     {
+        
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Blogs
@@ -27,13 +29,16 @@ namespace Portfolio.Controllers
             }
                 return View(posts);
         }
+        [Authorize(Roles ="Admin")]
         public ActionResult Admin()
         {
             return View(db.Blog.ToList());
         }
+        
         // GET: Blogs/Details/5
         public ActionResult Details(string slug)
         {
+            
             if (String.IsNullOrWhiteSpace(slug))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -43,9 +48,11 @@ namespace Portfolio.Controllers
             {
                 return HttpNotFound();
             }
+            
             return View(blog);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Blogs/Create
         public ActionResult Create()
         {
@@ -55,9 +62,10 @@ namespace Portfolio.Controllers
         // POST: Blogs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Slug,Body,MediaURL,Published")] Blog blog)
+        public ActionResult Create([Bind(Include = "Id,Title,Slug,Body,MediaURL,Published,Tag,Caption")] Blog blog)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +90,7 @@ namespace Portfolio.Controllers
             return View(blog);
         }
 
-
+        [Authorize(Roles = "Admin")]
         // GET: Blogs/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -101,9 +109,10 @@ namespace Portfolio.Controllers
         // POST: Blogs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published,Tag")] Blog blog)
+        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published,Tag,Caption")] Blog blog)
         {
             if (ModelState.IsValid)
             {
@@ -114,6 +123,7 @@ namespace Portfolio.Controllers
                 db.Entry(blog).Property("Body").IsModified = true;
                 db.Entry(blog).Property("Slug").IsModified = true;
                 db.Entry(blog).Property("MediaURL").IsModified = true;
+                db.Entry(blog).Property("Caption").IsModified = true;
                 db.Entry(blog).Property("Updated").IsModified = true;
                 db.Entry(blog).Property("Tag").IsModified = true;
                 db.SaveChanges();
@@ -121,7 +131,7 @@ namespace Portfolio.Controllers
             }
             return View(blog);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Blogs/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -136,7 +146,7 @@ namespace Portfolio.Controllers
             }
             return View(blog);
         }
-
+        [Authorize(Roles = "Admin")]
         // POST: Blogs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
