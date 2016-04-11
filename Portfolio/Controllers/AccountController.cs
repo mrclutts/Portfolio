@@ -12,6 +12,7 @@ using Portfolio.Models;
 
 namespace Portfolio.Controllers
 {
+    [RequireHttps]
     [Authorize]
     public class AccountController : Controller
     {
@@ -371,6 +372,7 @@ namespace Portfolio.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
+            ApplicationDbContext db = new ApplicationDbContext();
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
@@ -392,6 +394,8 @@ namespace Portfolio.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
+
+                    ViewBag.DispName = db.Users.Find(User.Identity.GetUserId()).DisplayName;
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }

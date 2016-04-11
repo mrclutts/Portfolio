@@ -10,7 +10,7 @@ using Portfolio.Models;
 
 namespace Portfolio.Controllers
 {
-    
+    [RequireHttps]
     public class BlogsController : Controller
     {
         

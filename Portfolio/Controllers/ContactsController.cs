@@ -13,6 +13,7 @@ using System.Net.Mail;
 
 namespace Portfolio.Controllers
 {
+    [RequireHttps]
     public class ContactsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

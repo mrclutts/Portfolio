@@ -58,11 +58,11 @@ namespace Portfolio
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "259800625236-bb7a2801prlv5eierffebrv7nk41g2gr.apps.googleusercontent.com",
+                ClientSecret = "wAoki30WMuohgHmuWyK9C6hg"
+            });
         }
     }
 }
