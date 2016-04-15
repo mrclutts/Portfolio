@@ -68,13 +68,13 @@ namespace Portfolio.Controllers
         public string GetCurrentDisplayName()
         {
             var user = UserManager.FindByEmail(User.Identity.GetUserName());
-            if (user != null)
+            if (user.DisplayName != null)
             {
                 return user.DisplayName;
             }
             else
             {
-                return "";
+                return user.UserName;
             }
         }
 
@@ -97,6 +97,10 @@ namespace Portfolio.Controllers
             switch (result)
             {                  
                 case SignInStatus.Success: 
+                    if (String.IsNullOrWhiteSpace(returnUrl))
+                    {
+                        return RedirectToAction("Blogindex", "Blogs");
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -169,7 +173,11 @@ namespace Portfolio.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    DisplayName = model.DisplayName};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -181,7 +189,7 @@ namespace Portfolio.Controllers
                      var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                      await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Blogindex", "Blogs");
                 }
                 AddErrors(result);
             }
@@ -372,7 +380,7 @@ namespace Portfolio.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
-            ApplicationDbContext db = new ApplicationDbContext();
+            
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
@@ -384,7 +392,7 @@ namespace Portfolio.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Blogindex", "Blogs");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -395,7 +403,7 @@ namespace Portfolio.Controllers
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
 
-                    ViewBag.DispName = db.Users.Find(User.Identity.GetUserId()).DisplayName;
+                   
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }
@@ -420,7 +428,7 @@ namespace Portfolio.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DisplayName = model.DisplayName };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -428,7 +436,7 @@ namespace Portfolio.Controllers
                     if (result.Succeeded)
                     {
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                        return RedirectToLocal(returnUrl);
+                        return RedirectToAction("Blogindex", "Blogs");
                     }
                 }
                 AddErrors(result);
@@ -445,7 +453,7 @@ namespace Portfolio.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Blogindex", "Blogs");
         }
 
         //

@@ -17,7 +17,7 @@ namespace Portfolio.Migrations
 
         protected override void Seed(Portfolio.Models.ApplicationDbContext context)
         {
-            
+
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {
                 var roleManager = new RoleManager<IdentityRole>(
@@ -58,7 +58,7 @@ namespace Portfolio.Migrations
                     DisplayName = "Ria & Antonio"
                 }, "Password-1");
             }
-            else { 
+            else {
 
                 var userManager = new UserManager<ApplicationUser>(
                 new UserStore<ApplicationUser>(context));
@@ -66,17 +66,17 @@ namespace Portfolio.Migrations
                 userManager.AddToRole(userId, "Moderator");
             }
         }
-            //  This method will be called after migrating to the latest version.
+        //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-        }
+        //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+        //  to avoid creating duplicate seed data. E.g.
+        //
+        //    context.People.AddOrUpdate(
+        //      p => p.FullName,
+        //      new Person { FullName = "Andrew Peters" },
+        //      new Person { FullName = "Brice Lambson" },
+        //      new Person { FullName = "Rowan Miller" }
+        //    );
+        //
     }
+}

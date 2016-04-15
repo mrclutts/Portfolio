@@ -85,3 +85,8 @@ C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfoli
 C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\obj\Release\Portfolio.csprojResolveAssemblyReference.cache
 C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\obj\Release\Portfolio.dll
 C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\obj\Release\Portfolio.pdb
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\Owin.Security.Providers.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\PagedList.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\PagedList.Mvc.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\PagedList.xml
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\PagedList.Mvc.xml

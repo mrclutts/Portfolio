@@ -29,6 +29,9 @@ namespace Portfolio.Models
         public string Tag { get; set; }
         public bool Published { get; set; }
 
+        [EmailAddress]
+        public string Subscribe { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
     }
 }

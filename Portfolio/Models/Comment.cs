@@ -20,6 +20,6 @@ namespace Portfolio.Models
         public string UpdateReason { get; set; }
 
         public virtual ApplicationUser Author { get; set; }
-        public virtual Blog Blog { get; set; }
+        public virtual Blog Post { get; set; }
     }
 }

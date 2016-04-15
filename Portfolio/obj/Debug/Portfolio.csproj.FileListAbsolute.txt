@@ -85,3 +85,8 @@ C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfoli
 C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\SendGridMail.dll
 C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\System.Net.Http.Formatting.dll
 C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\System.Net.Http.Formatting.xml
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\PagedList.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\PagedList.Mvc.dll
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\PagedList.xml
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\PagedList.Mvc.xml
+C:\Users\mrcpa\OneDrive\Documents\Visual Studio 2015\Projects\Portfolio\Portfolio\bin\Owin.Security.Providers.dll

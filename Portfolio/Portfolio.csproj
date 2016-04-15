@@ -82,6 +82,18 @@
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Owin.Security.Providers, Version=1.25.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Security.Providers.1.27\lib\net45\Owin.Security.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SendGrid, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
       <HintPath>..\packages\Sendgrid.6.3.4\lib\SendGrid.dll</HintPath>
       <Private>True</Private>
@@ -215,9 +227,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
-    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SubscribesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -229,6 +242,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\StringUtilities.cs" />
+    <Compile Include="Models\Subscribe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -248,6 +262,7 @@
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\owl.theme.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\SyntaxHighlighter\shCore.css" />
     <Content Include="Content\SyntaxHighlighter\shCoreDefault.css" />
     <Content Include="Content\SyntaxHighlighter\shCoreDjango.css" />
@@ -323,7 +338,9 @@
     <Content Include="img\blog\blogvinyl.jpg" />
     <Content Include="img\blog\Boats.JPG" />
     <Content Include="img\blog\boston.JPG" />
-    <Content Include="img\blog\gfather.JPG" />
+    <Content Include="img\blog\CF.jpg" />
+    <Content Include="img\blog\fleetfoxes.jpeg" />
+    <Content Include="img\blog\Grizzly-Bear.jpg" />
     <Content Include="img\blog\Umstead.JPG" />
     <Content Include="img\csharp.png" />
     <Content Include="img\IMG_3962.JPG" />
@@ -1597,11 +1614,13 @@
     <Content Include="Views\Blogs\BlogIndex.cshtml" />
     <Content Include="Views\Account\ResendEmailConfirmation.cshtml" />
     <Content Include="Views\Account\ConfirmationSent.cshtml" />
-    <Content Include="Views\Comments\Create.cshtml" />
-    <Content Include="Views\Comments\Delete.cshtml" />
-    <Content Include="Views\Comments\Details.cshtml" />
-    <Content Include="Views\Comments\Edit.cshtml" />
-    <Content Include="Views\Comments\Index.cshtml" />
+    <Content Include="Views\Blogs\EditComment.cshtml" />
+    <Content Include="Views\Blogs\DeleteComment.cshtml" />
+    <Content Include="Views\Subscribes\Create.cshtml" />
+    <Content Include="Views\Subscribes\Delete.cshtml" />
+    <Content Include="Views\Subscribes\Details.cshtml" />
+    <Content Include="Views\Subscribes\Edit.cshtml" />
+    <Content Include="Views\Subscribes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

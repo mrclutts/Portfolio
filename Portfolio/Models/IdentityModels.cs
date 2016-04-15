@@ -13,7 +13,6 @@ namespace Portfolio.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        [Required]
         public string DisplayName { get; set; }
         
 
@@ -47,5 +46,6 @@ namespace Portfolio.Models
         public DbSet<Contact> Contact { get; set; }
         public DbSet<Blog> Blog { get; set; }
         public DbSet<Comment> Comment { get; set; }
+        public DbSet<Subscribe> Subscribe { get; set; }
     }
 }

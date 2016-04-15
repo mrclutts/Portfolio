@@ -1,7 +1,20 @@
-﻿@model IEnumerable<Portfolio.Models.Blog>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<Portfolio.Models.Blog>
 
 @{
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
+
+}
+@helper Truncate(string input, int length)
+    {
+    if (input.Length <= length)
+    {
+        @Html.Raw(input)
+    }
+    else {
+        @Html.Raw(input.Substring(0, length))<text>...</text>
+    }
 }
 <div class="blogtitle text-center">
     <div class="blogoverlay">
@@ -22,42 +35,24 @@
                 <div class="slider">
                     <div class="callbacks_container">
                         <ul class="rslides" id="slider">
-                            @foreach (var blog in Model.OrderByDescending(p=>p.Created).Take(4))
+                            @foreach (var blog in Model.Take(3))
                             {
                             <li>
                                 <a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})">
-                                    <img src="~/img/blog/Umstead.JPG" class="img-responsive" />
+                                    @if (blog.MediaURL != null)
+                                    {
+                                        <img class="img-responsive" src="@Url.Content(blog.MediaURL)" alt="" />
+                                    }
                                     <div class="caption">
                                         <h3>@blog.Title</h3>
                                         <p>by Matt Clutts</p>
                                         <p>@blog.Created.LocalDateTime</p>
-                                        <p>@Html.Raw(blog.Body)</p>
+                                        <p>@Truncate(blog.Body, 250)</p>
                                         
                                     </div>
                                 </a>
                             </li>
                             }
-                            @*<li>
-                                <img src="~/img/blog/Boats.JPG" class="img-responsive"/>
-                                <div class="caption">
-                                    <h3>Curabitur et ligula. Ut molestie </h3>
-                                    <p>Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulu. </p>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="~/img/blog/gfather.JPG" class="img-responsive"/>
-                                <div class="caption">
-                                    <h3>Etiam ullamcorper. Suspendisse</h3>
-                                    <p>Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. </p>
-                                </div>
-                            </li>*@
-                            @*<li>
-                                <img src="images/6.jpg" class="img-responsive" alt="">
-                                <div class="caption">
-                                    <h3>Suspendisse a pellentesque dui</h3>
-                                    <p>Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada .</p>
-                                </div>
-                            </li>*@
                         </ul>
                     </div>
                 </div>
@@ -67,33 +62,54 @@
         <!-- nam-matis -->
         <div class="nam-matis">
             <div class="nam-matis-top">
-                @foreach (var blog in Model.OrderByDescending(p => p.Created))
-                {
-                    
-                        <div class="col-md-6 nam-matis-1">
-                            <a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})"><img src="~/img/blog/Umstead.JPG" class="img-responsive" /></a>
-                            <h3><a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})">@blog.Title</a></h3>
-                            <p>@Html.Raw(blog.Body)</p>
+   
+            @foreach (var blog in Model)
+            {
+                    <div class="col-md-12 blog-grids">
+                        <div class="col-md-6">
+                            <a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})">
+                            @if (blog.MediaURL != null)
+                            {
+                                <img class="img-responsive" src="@Url.Content(blog.MediaURL)" alt="" />
+                            }
+                            </a>
                         </div>
+                        <div class="col-md-6">
+                            <h3><a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})">@blog.Title</a></h3>
+                            <p>
+                                @Truncate(blog.Body, 250)
 
+                            </p>
+                            <p><a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})" class="blogbtn">Read More!</a></p>
+                        </div>
                         
-                        }
-                <div class="clearfix"> </div>
                     </div>
+
+                }
+                
+                    </div>
+            <div class="text-center">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("BlogIndex", new { page }))
+            </div>
+            <div class="clearfix"> </div>
+            
         </div>
-        <!-- nam-matis -->
+        
+        <!-- Right Rail! -->
     </div>
     <div class="col-md-3 bann-left">
         <div class="b-search">
-            <form>
-                <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-                <input type="submit" value="">
+            <form action="@Url.Action("Blogindex", "Blogs")">
+                <input type="text" name="query" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <button class="pull-right detailsbtn" type="submit"><i class="fa fa-search"></i></button>
+                <div class="clearfix"></div>
             </form>
         </div>
         <h3>About this Blog</h3>
         <div class="blo-top">
             <div class="blog-grids">
-                <p>Where music and programming collide.  A blog centered around web development and the independent music scene.  With posts on soccer and the great outdoors when I'm not discussing web development or music.</p>
+                <p>Where music and programming collide.  A blog centered around web development and the independent music scene.  Other topics include: soccer, hiking, and the great out doors.</p>
             </div>
             <div class="blog-grids">
                 <div class="blog-grid-left">
@@ -105,13 +121,19 @@
                 <div class="clearfix"></div>
             </div>
         </div>
+        <!--Recent Posts-->
         <h3>Recent Posts</h3>
         <div class="blo-top">
             @foreach (var blog in Model.OrderByDescending(p => p.Created).Take(3))
             {
                 <div class="blog-grids">
                     <div class="blog-grid-left">
-                        <a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})"><img src="~/img/blog/Umstead.JPG" class="img-responsive" /></a>
+                        <a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})">
+                        @if (blog.MediaURL != null)
+                        {
+                            <img class="img-responsive" src="@Url.Content(blog.MediaURL)" alt="" />
+                        }
+                        </a>
                     </div>
                     <div class="blog-grid-right">
                         <h4><a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})">@blog.Title </a></h4>
@@ -125,56 +147,39 @@
         
 
 
-           @* <div class="blog-grids">
-                <div class="blog-grid-left">
-                    <a href="single.html"><img src="images/2b.jpg" class="img-responsive" alt=""></a>
-                </div>
-                <div class="blog-grid-right">
-                    <h4><a href="single.html">Little Invaders </a></h4>
-                    <p>pellentesque dui, non felis. Maecenas male </p>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-
-          <div class="blog-grids">
-       <div class="blog-grid-left">
-            <a href=""><img src="images/3b.jpg" class="img-responsive" alt=""></a>
-        </div>
-        <div class="blog-grid-right">
-            <h4><a href="single.html">Little Invaders </a></h4>
-            <p>pellentesque dui, non felis. Maecenas male </p>
-        </div>
-        <div class="clearfix"> </div>
-    </div>*@
-
+        <!--Tags-->
         <h3>Categories</h3>
         <div class="blo-top">
-        @foreach (var blog in Model.OrderByDescending(p => p.Created))
-        {
-            <li><a href="@Url.Action("Index","Blogs", new {Tag = blog.Tag})">|| @blog.Tag</a></li>
-        }
-            <div class="text-center">
-            <a href="@Url.Action("Index", "Blogs")"><h4>Show All</h4></a>
-            </div>
+        <ul style="padding-left: 0px">
+            <li><a href="@Url.Action("BlogIndex","Blogs", new {Tag = "Music"})">|| Music</a></li>
+            <li><a href="@Url.Action("BlogIndex","Blogs", new {Tag = "Programming"})">|| Programming</a></li>
+            <li><a href="@Url.Action("BlogIndex","Blogs", new {Tag = "Soccer" })" >|| Soccer</a></li>
+            <li><a href="@Url.Action("BlogIndex","Blogs", new {Tag = "Hiking" })">|| Hiking</a></li>
+        </ul>
+        <div class="text-center">
+            <a href="@Url.Action("BlogIndex", "Blogs")"><h4>Show All</h4></a>
         </div>
-        <h3>Newsletter</h3>
+        </div>
+        <h3>Subscribe!</h3>
+
 
         <div class="blo-top">
+@using (Html.BeginForm("Create", "Subscribes", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
             <div class="name">
-                <form>
-                    <input type="text" placeholder="email" required="">
-                </form>
+                <input type="text" name="SubEmail" placeholder="email" required="">          
             </div>
             <div class="button">
-                <form>
-                    <input type="submit" value="Subscribe">
-                </form>
+                <input type="submit" value="Subscribe">
             </div>
             <div class="clearfix"> </div>
+}
         </div>
     </div>
 
     <div class="clearfix"> </div>
+
     @*<div class="fle-xsel">
         <ul id="flexiselDemo3">
             <li>

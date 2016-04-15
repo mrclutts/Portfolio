@@ -6,6 +6,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Portfolio.Models;
+using Microsoft.Owin.Security.Twitter;
+using Microsoft.Owin.Security;
+using Owin.Security.Providers.LinkedIn;
 
 namespace Portfolio
 {
@@ -50,19 +53,31 @@ namespace Portfolio
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(new TwitterAuthenticationOptions
+            {
+                ConsumerKey = "Ex6qhmJc0d8N4wSZA4MSyzJzE",
+                ConsumerSecret = "odtL4ZPJyOANywDZN2mOCtnjoXeWdcGTg6fi5AY28dKBL3KOHz",
+                BackchannelCertificateValidator = new CertificateSubjectKeyIdentifierValidator(new[]
+     {
+        "A5EF0B11CEC04103A34A659048B21CE0572D7D47", // VeriSign Class 3 Secure Server CA - G2
+        "0D445C165344C1827E1D20AB25F40163D8BE79A5", // VeriSign Class 3 Secure Server CA - G3
+        "7FD365A7C2DDECBBF03009F34339FA02AF333133", // VeriSign Class 3 Public Primary Certification Authority - G5
+        "39A55D933676616E73A761DFA16A7E59CDE66FAD", // Symantec Class 3 Secure Server CA - G4
+        "5168FF90AF0207753CCCD9656462A212B859723B", //DigiCert SHA2 High Assurance Server C‎A 
+        "B13EC36903F8BF4701D498261A0802EF63642BC3" //DigiCert High Assurance EV Root CA
+    })
+            });
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1687213794878746",
+               appSecret: "67f747f6422d2461affe079f7f3b388b");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
                 ClientId = "259800625236-bb7a2801prlv5eierffebrv7nk41g2gr.apps.googleusercontent.com",
                 ClientSecret = "wAoki30WMuohgHmuWyK9C6hg"
             });
+            app.UseLinkedInAuthentication("77nm03fjhujdx1", "xisa7xDq7JsBcQVA");
         }
     }
 }
