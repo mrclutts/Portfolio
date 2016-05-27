@@ -9,7 +9,8 @@
     <!--BootStrap CSS-->
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <!--Fonts-->
-    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+   
     <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
     <!--Custom CSS-->
@@ -49,7 +50,7 @@
                 <ul class="nav navbar-nav">
 
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Resume" ? "active" : "")"><a target="_blank" href="~/img/Matthew Clutts Resume.pdf">Resume</a></li>
+                    <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Resume" ? "active" : "")">@Html.ActionLink("Resume", "Resume", "Home")</li>
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Portfolio" ? "active" : "")">@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>                   
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "BlogIndex" ? "active" : "")">@Html.ActionLink("Blog", "BlogIndex", "Blogs") </li>
                     <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Music" ? "active" : "")">@Html.ActionLink("Music", "Music", "Home") </li>
@@ -127,6 +128,7 @@
     @Scripts.Render("~/bundles/bootstrap")*@
    
     <!-- JavaScript -->
+    
     <script src="~/js/jquery-1.10.2.js"></script>
     <script src="~/js/bootstrap.js"></script>  
     

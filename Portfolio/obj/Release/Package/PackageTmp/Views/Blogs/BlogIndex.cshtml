@@ -17,8 +17,8 @@
     }
 }
 <div class="blogtitle text-center">
-    <div class="blogoverlay">
-        <h2>   Sound Programming  <br /> <i class="fa fa-volume-up"></i></h2>
+    <div class="blogoverlay">        
+        <h2>   Sound Programming  <br /> <i class="fa fa-volume-up"></i></h2> 
     </div>
 </div>
 <div class="bloghead">
@@ -47,7 +47,7 @@
                                         <h3>@blog.Title</h3>
                                         <p>by Matt Clutts</p>
                                         <p>@blog.Created.LocalDateTime</p>
-                                        <p>@Truncate(blog.Body, 250)</p>
+                                        <p>@Truncate(blog.Body, 200)</p>
                                         
                                     </div>
                                 </a>
@@ -77,7 +77,7 @@
                         <div class="col-md-6">
                             <h3><a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})">@blog.Title</a></h3>
                             <p>
-                                @Truncate(blog.Body, 250)
+                                @Truncate(blog.Body, 200)
 
                             </p>
                             <p><a href="@Url.Action("Details","Blogs", new {slug = blog.Slug})" class="blogbtn">Read More!</a></p>

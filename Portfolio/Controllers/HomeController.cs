@@ -23,6 +23,10 @@ namespace Portfolio.Controllers
             
             return View();
         }
+        public ActionResult Resume()
+        {
+            return View();
+        }
         public ActionResult Blog()
         {
             return View(db.Blog.ToList());
@@ -50,6 +54,7 @@ namespace Portfolio.Controllers
             contact.SendTime = DateTime.Now;
             var svc = new EmailService();
             var msg = new IdentityMessage();
+            msg.Destination = contact.SenderEmail;
             msg.Subject = "Contact from my Portfolio" + contact.Name;
             msg.Body = contact.Message + "Email Address:" + contact.SenderEmail + "Phone:" + contact.Phone;
             await svc.SendAsync(msg);

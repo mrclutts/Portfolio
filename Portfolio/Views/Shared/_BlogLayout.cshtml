@@ -52,7 +52,7 @@
             <ul class="nav navbar-nav">
 
                 <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")">@Html.ActionLink("About", "About", "Home")</li>
-                <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Resume" ? "active" : "")"><a target="_blank" href="~/img/Matthew Clutts Resume.pdf">Resume</a></li>
+                <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Resume" ? "active" : "")">@Html.ActionLink("Resume", "Resume", "Home")</li>
                 <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Portfolio" ? "active" : "")">@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
                 <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "BlogIndex" ? "active" : "")">@Html.ActionLink("Blog", "BlogIndex", "Blogs") </li>
                 <li class="menuItem @(ViewContext.RouteData.Values["Action"].ToString() == "Music" ? "active" : "")">@Html.ActionLink("Music", "Music", "Home") </li>

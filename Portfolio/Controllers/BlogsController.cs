@@ -110,7 +110,7 @@ namespace Portfolio.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Title,Slug,Body,MediaURL,Published,Tag,Caption")] Blog blog, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "Id,Title,Slug,Body,MediaURL,Published,Tag,Caption")] Blog blog, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
@@ -136,17 +136,28 @@ namespace Portfolio.Controllers
                 blog.Created = System.DateTimeOffset.Now;
                 db.Blog.Add(blog);
                 db.SaveChanges();
-                var recipients = db.Subscribe.Select(s=>s.SubEmail).ToList();
-                EmailService es = new EmailService();
-                IdentityMessage im = new IdentityMessage();
-                im.Subject = $"Blog Post from Matt Clutts - {blog.Title}";
-                im.Body = blog.Body;
-                await es.SendAsync(im,recipients);
+                
                 return RedirectToAction("Admin");
             }
 
             return View(blog);
         }
+        //Post: Blogs/Publish
+        [Authorize(Roles ="Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Publish([Bind(Include = "Id,Title,Slug,Body,MediaURL,Published,Tag,Caption")]Blog blog)
+        {
+            var recipients = db.Subscribe.Select(s => s.SubEmail).ToList();
+            EmailService es = new EmailService();
+            IdentityMessage im = new IdentityMessage();
+            im.Subject = $"Blog Post from Matt Clutts - {blog.Title}";
+            var callbackUrl = Url.Action("Details", "Blogs", new { slug = blog.Slug }, protocol: Request.Url.Scheme);
+            im.Body = blog.Body + "Check it out <a href=\"" + callbackUrl + "\">here!</a>";
+            await es.SendAsync(im, recipients);
+            return RedirectToAction("Admin");
+        }
+
         //Post: Blogs/CreateComment
         [Authorize]
         [HttpPost]
@@ -217,11 +228,24 @@ namespace Portfolio.Controllers
                     db.Entry(blog).Property("MediaURL").IsModified = true;
 
                 }
+                if (db.Entry(blog).Property("Title").IsModified)
+                {
+                    var Slug = StringUtilities.URLFriendly(blog.Title);
+                    if (String.IsNullOrWhiteSpace(Slug))
+                    {
+                        ModelState.AddModelError("Title", "Invalid Title.");
+                        return View(blog);
+                    }
+                    if (db.Blog.Any(b => b.Slug == Slug))
+                    {
+                        ModelState.AddModelError("Title", "The title must be unique.");
+                        return View(blog);
+                    }
+                    blog.Slug = Slug;
+                }
                 //db.Entry(blog).State = EntityState.Modified;
-                blog.Updated = System.DateTimeOffset.Now;
-                db.Entry(blog).Property("Title").IsModified = true;
+                blog.Updated = System.DateTimeOffset.Now;             
                 db.Entry(blog).Property("Body").IsModified = true;
-                db.Entry(blog).Property("Slug").IsModified = true;
                 db.Entry(blog).Property("Caption").IsModified = true;
                 db.Entry(blog).Property("Updated").IsModified = true;
                 db.Entry(blog).Property("Tag").IsModified = true;

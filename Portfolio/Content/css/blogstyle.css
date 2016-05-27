@@ -827,6 +827,7 @@ h3.m_3 {
   position: fixed;
   max-width: 300px;
   
+  
 }
 .about-blog {
     background-color:#e75854;
@@ -895,7 +896,7 @@ i.adm1{
 }
 .blog-artical-info-text p{
 	color: #34495E;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	line-height: 1.8em;
 	margin: 1em 0;
 }
@@ -2477,4 +2478,7 @@ a.b-home {
     background-color: #f8f8f8;
     padding-bottom: 26px;
     padding-left: 25px;
+}
+#details-foot {
+    margin-top: 50px;
 }

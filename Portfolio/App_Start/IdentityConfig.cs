@@ -21,12 +21,16 @@ namespace Portfolio
     {
         public async Task SendAsync(IdentityMessage message)
         {
+            
             var apikey = ConfigurationManager.AppSettings["SendGridAPIKey"];
             var from = ConfigurationManager.AppSettings["ContactEmail"];
+            
+            
             //Create the email object first, then add the porperties.
             SendGridMessage myMessage = new SendGridMessage();
+
             myMessage.AddTo(from);
-            myMessage.From = new MailAddress(from);
+            myMessage.From = new MailAddress(message.Destination);
             myMessage.Subject = message.Subject;
             myMessage.Html = message.Body;
 

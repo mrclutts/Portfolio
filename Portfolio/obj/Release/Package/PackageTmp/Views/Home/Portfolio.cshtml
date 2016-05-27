@@ -155,7 +155,7 @@
                         </div><!-- /.col-lg-4 -->
                         <!--Budget App-->
                         <div class="col-md-4 col-sm-6 col-xs-12 text-center portfolio-item csharp">
-                            <a href="" data-toggle="modal" data-target="#modal12">
+                            <a href="" data-toggle="modal" data-target="#modal13">
                                 <img class="rotate porticon" src="~/img/csharp.png" alt="Generic placeholder image">
                                 <h3>Budget Application</h3>
                             </a>
@@ -164,7 +164,7 @@
                         </div><!-- /.col-lg-4 -->
                         <!--Bug Tracker-->
                         <div class="col-md-4 col-sm-6 col-xs-12 text-center portfolio-item csharp">
-                            <a href="" data-toggle="modal" data-target="#modal12">
+                            <a href="" data-toggle="modal" data-target="#modal14">
                                 <img class="rotate porticon" src="~/img/csharp.png" alt="Generic placeholder image">
                                 <h3>Bug Tracker</h3>
                             </a>
@@ -885,7 +885,73 @@ namespace Portfolio.Models
         </div>
     </div>
 </div>
+<!--Bug Tracker-->
+<div class="modal fade" id="modal14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 class="modal-title" id="myModalLabel">Bug Tracker: Swoop</h2>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-6 col-xs-12">
+                    <h4>Overview</h4>
+                    <p>Swoop is a fully functioning bug tracker application for software development, support, and maintenance.  Users may submit tickets to projects and track their issues from initiation to resolution.  Swoop is a great way to provide transparency to customers and clients while also providing user friendly platform for the prject team to stay organized.</p>
 
+                    <h4> Features</h4>
+                    <p>
+                        <ul class="modallist">
+                            <li>Build time: 4 weeks</li>
+                            <li>Project and Ticket functionality built with C# classes</li>
+                            <li>Database constructed with code first migrations</li>
+                            <li>CRUD Operations enabled with .Net scaffolding</li>
+                            <li>Data is retrieved from the database with LINQ and displayed in the view with Razor</li>
+                            <li>User authentication provided by .Net Framework and data access is controlled by a user's assigned role</li>
+                        </ul>
+                    </p>
+                    <p> Check it out <a href="http://mrclutts-bugtracker.azurewebsites.net/" target="_blank" class="btn-large mybutton_standard csharpbtn"> Here</a></p>
+
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <pre class="brush:csharp">
+    public ActionResult Projects()
+        {
+            
+            var user = db.Users.Find(User.Identity.GetUserId());
+            UserRolesHelper rolehelper = new UserRolesHelper(db);
+            if (rolehelper.IsUserInRole(user.Id,"Admin"))
+            {
+                return View(db.Project.ToList());
+            }
+            if(rolehelper.IsUserInRole(user.Id, "ProjectManager"))
+            {
+                //db.Project.Where(z => z.ProjectManagerId == user.Id).ToList()
+                return View(user.Projects.ToList());
+            }
+            else 
+            {
+                return View(user.Projects.ToList());
+            }
+        }
+
+                    </pre>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-footer no-margin">
+                <ul class="lipad">
+                    <li class="lipad"><h4>Powered With:</h4></li>
+                    <li><img src="~/img/prog-aspnet.png" /></li>
+                    <li><img src="~/img/prog-csharp black.png" /></li>
+                    <li><img src="~/img/prog-jquery.png" /></li>
+                    <li><img src="~/img/html5-02.png" /> </li>
+                    <li><img src="~/img/css3-02.png" /> </li>
+                    <li><img src="~/img/rus-vk-01.png" /> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
     <!--Exercises-->
 @section scripts{
 <script src="~/js/jquery-1.10.2.js"></script>

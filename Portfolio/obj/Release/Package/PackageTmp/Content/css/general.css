@@ -253,6 +253,7 @@ color: #e75854 !important;
 	font-weight: 600 !important;
 }
 
+
 .menuItem a:hover  {
     color: #ffffff !important;
     background-color: #34495E !important;
@@ -1896,4 +1897,151 @@ a:hover .info {
 /* BLOG */
 .blogpad {
     padding-top: 100px !important;
+}
+
+#experience {
+    min-height: 1200px;
+}
+.timeline
+{
+	list-style:none;
+	padding:0;
+	position:relative;
+    
+}
+
+.timeline:before
+{
+	background-color:#f1f1f1;
+	bottom:0;
+	content:"";
+	left:40px;
+	margin-left:-1.5px;
+	position:absolute;
+	top:0;
+	width:2px;
+}
+
+.timeline>li
+{
+	margin-bottom:50px;
+	min-height:50px;
+	position:relative;
+}
+
+.timeline>li:before,.timeline>li:after
+{
+	content:" ";
+	display:table;
+}
+
+.timeline>li:after
+{
+	clear:both;
+}
+
+.timeline>li .timeline-panel
+{
+	float:right;
+	padding:0 20px 0 100px;
+	position:relative;
+	text-align:left;
+	width:100%;
+}
+
+.timeline>li .timeline-panel:before
+{
+	border-left-width:0;
+	border-right-width:15px;
+	left:-15px;
+	right:auto;
+}
+
+.timeline>li .timeline-panel:after
+{
+	border-left-width:0;
+	border-right-width:14px;
+	left:-14px;
+	right:auto;
+}
+
+.timeline>li .timeline-image
+{
+	background-color:#e75854;
+	border:7px solid #f1f1f1;
+	border-radius:100%;
+	color:#fff;
+	height:100px;
+	left:-10px;
+    
+    
+	margin-left:0;
+	position:absolute;
+	text-align:center;
+	width:100px;
+	z-index:100;
+    
+}
+
+.about-fa {
+    padding-top: 18px;
+}
+.timeline>li .timeline-image h4
+{
+	font-size:18px;
+	line-height:24px;
+	margin-top:24px;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel
+{
+	float:right;
+	padding:0 20px 0 100px;
+	text-align:left;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:before
+{
+	border-left-width:0;
+	border-right-width:15px;
+	left:-15px;
+	right:auto;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:after
+{
+	border-left-width:0;
+	border-right-width:14px;
+	left:-14px;
+	right:auto;
+}
+
+.timeline>li:last-child
+{
+	margin-bottom:50px;
+}
+
+.timeline .timeline-heading h4
+{
+	color:inherit;
+	margin-top:0;
+}
+
+.timeline .timeline-heading h4.subheading
+{
+	text-transform:none;
+}
+
+.timeline .timeline-body>p,.timeline .timeline-body>ul
+{
+	margin-bottom:0;
+}
+#resumebtn:hover {
+    background-color:#34495e;
+}
+@media all and (max-width: 600px){
+    .blogtitle h2 {
+        font-size: 44px !important;
+    }
+    .
 }
